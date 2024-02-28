@@ -2,14 +2,15 @@
 def turn_right():
     repeat 3:
         turn_left()
-
-def jump_hurdle():
-    while front_is_clear():
-        if not at_goal():
-
-            move()
         
-    if not front_is_clear():
+#lots and lots of trouble 
+
+def jump_hurdle(): 
+    while front_is_clear():
+        if at_goal():
+            done()
+        move()
+    if not at_goal():
         turn_left()
     while wall_on_right():
         move()
@@ -22,5 +23,9 @@ def jump_hurdle():
         turn_left()
         
 #running my code
+
+think(50)
 while not at_goal():
     jump_hurdle()
+if at_goal():
+    done()
