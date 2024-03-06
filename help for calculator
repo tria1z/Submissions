@@ -1,0 +1,11 @@
+def multiply(a, b):
+    product = a * b
+    return product
+
+def divide(a,b):
+        quotient = a/b
+        return quotient
+
+total_students = multiply(3,22)
+team_size = divide(total_students,6)
+print(f"You have {total_students} students, you can make 6 teams of {int(team_size)}")
