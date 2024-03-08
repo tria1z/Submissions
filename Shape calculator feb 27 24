@@ -1,4 +1,5 @@
 #choose the shape you want the surface area for
+import math
 
 shape = input("choose which shape do you want. 1 for cube, 2 for square, 3 for circle")
 
@@ -9,5 +10,6 @@ if shape == "1":
     print (sa_cube)
     
 if shape == "3":
-    sideLength = int(input("What is your radius?"))
-    sa_circle = (radius
+    radius = int(input("What is your radius?"))
+    sa_circle = (radius*math.pi)
+    print (sa_circle)
