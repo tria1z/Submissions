@@ -1,0 +1,12 @@
+animal = input (" Provide an animal: ")
+adjective = input (" Provide an adjective: ")
+noun = input (" Provide a noun: ")
+activity = input (" Provide an activity: ")
+
+madlib = (f"I have a {animal}, "\
+          f"that {animal} is {adjective}. "\
+          f"My {adjective} {animal}'s friend is a {noun}, "\
+          f"{adjective} {animal}'s friend {noun} enjoys {activity}. "\
+          f"{adjective} {animal} and {noun} play {activity} {time")
+
+print(madlib)
