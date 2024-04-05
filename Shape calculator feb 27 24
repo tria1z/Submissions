@@ -1,15 +1,66 @@
-#choose the shape you want the surface area for
 import math
+#calulations needed for calculator
+def calculate_cube_volume(side_length):
+    return side_length ** 3
 
-shape = input("choose which shape do you want. 1 for cube, 2 for square, 3 for circle")
+def calculate_cube_surface_area(side_length):
+    return 6 * side_length ** 2
 
-#making statements for calculations
-if shape == "1":
-    sideLength = int(input("What is your side length?"))
-    sa_cube = (sideLength*sideLength*6)
-    print (sa_cube)
+def calculate_sphere_volume(radius):
+    return (4/3) * math.pi * radius ** 3
+
+def calculate_sphere_surface_area(radius):
+    return 4 * math.pi * radius ** 2
+
+def calculate_cylinder_volume(radius, height):
+    return math.pi * radius ** 2 * height
+
+def calculate_cylinder_surface_area(radius, height):
+    return 2 * math.pi * radius * (radius + height)
+
+def get_positive_number(prompt):
+    while True:
+        try:
+            value = float(input(prompt))
+            if value <= 0:
+                print("Please enter a positive number.")
+            else:
+                return value
+        except ValueError:
+            print("Please enter a valid number.")
+#needing input from the user to use calculator
+def main():
+    print("Shape options:")
+    print("1. Cube")
+    print("2. Sphere")
+    print("3. Cylinder")
+
+    shape_choice = input("Enter the number of the shape you want to calculate (1, 2, or 3): ")
+
+    if shape_choice == '1':  # Cube
+        side_length = get_positive_number("Enter the side length of the cube: ")
+        volume = calculate_cube_volume(side_length)
+        surface_area = calculate_cube_surface_area(side_length)
+        print(f"\nCube Volume: {volume}")
+        print(f"Cube Surface Area: {surface_area}")
+
+    elif shape_choice == '2':  # Sphere
+        radius = get_positive_number("Enter the radius of the sphere: ")
+        volume = calculate_sphere_volume(radius)
+        surface_area = calculate_sphere_surface_area(radius)
+        print(f"\nSphere Volume: {volume}")
+        print(f"Sphere Surface Area: {surface_area}")
+
+    elif shape_choice == '3':  # Cylinder
+        radius = get_positive_number("Enter the radius of the cylinder: ")
+        height = get_positive_number("Enter the height of the cylinder: ")
+        volume = calculate_cylinder_volume(radius, height)
+        surface_area = calculate_cylinder_surface_area(radius, height)
+        print(f"\nCylinder Volume: {volume}")
+        print(f"Cylinder Surface Area: {surface_area}")
+
+    else:
+        print("Invalid choice. Please enter 1, 2, or 3.")
+#running script
+main()
     
-if shape == "3":
-    radius = int(input("What is your radius?"))
-    sa_circle = (radius*math.pi)
-    print (sa_circle)
