@@ -1,12 +1,24 @@
-animal = input (" Provide an animal: ")
-adjective = input (" Provide an adjective: ")
-noun = input (" Provide a noun: ")
-activity = input (" Provide an activity: ")
+def madlib():
+#get inputs from user
+place = input("Enter a place: ")
+person = input("Enter a person or creature: ")
+verb = input("Enter a verb: ")
+time_period = input("Enter a time period: ")
+action1 = input("Enter an action: ")
+action2 = input("Enter another action: ")
+activity = input("Enter an activity: ")
+noun = input("Enter a noun: ")
+adjective1 = input("Enter an adjective: ")
+adjective2 = input("Enter another adjective: ")
+emotion1 = input("Enter an emotion: ")
+emotion2 = input("Enter another emotion: ")
+action3 = input("Enter an action: ")
+adverb = input("Enter an adverb: ")
 
-madlib = (f"I have a {animal}, "\
-          f"that {animal} is {adjective}. "\
-          f"My {adjective} {animal}'s friend is a {noun}, "\
-          f"{adjective} {animal}'s friend {noun} enjoys {activity}. "\
-          f"{adjective} {animal} and {noun} play {activity} {time")
+#fill in the madlib template with inputs
+madlib = f"Once upon a time, in a {place}, there was a {person} who loved to {verb}. Every {time_period}, they would {action1} and {action2}. One day, while {activity}, they stumbled upon a {noun}. It was {adjective1} and {adjective2}, but they felt {emotion1} and {emotion2}. In the end, they {action3} and lived {adverb} ever after."
 
-print(madlib)
+return madlib
+
+#printing
+print(madlib())
